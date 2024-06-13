@@ -1,5 +1,28 @@
 {
   "Index": {
     "title": "Hello world!"
+  },
+  "nav": {
+    "links": [
+      { "label": "Иностранным студентам", "href": "ino", "submenu": "" },
+      { "label": "Международная школа бизнеса", "href": "", "submenu": "" },
+      { "label": "Наши партнеры", "href": "", "submenu": "" },
+      {
+        "label": "Erasmus",
+        "href": "",
+        "submenu": [
+          { "label": "Кредитная мобильность", "href": "" },
+          { "label": "Erasmus+ CirculEC", "href": "" }
+        ]
+      },
+      {
+        "label": "Академическая мобильность",
+        "href": "",
+        "submenu": [
+          { "label": "Студенты", "href": "" },
+          { "label": "Преподаватели", "href": "" }
+        ]
+      }
+    ]
   }
 }

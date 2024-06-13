@@ -1,0 +1,14 @@
+.wrapper {
+  position: relative;
+  height: 5vh;
+}
+.link {
+  color: var(--color-base);
+  text-decoration: none;
+}
+.hover {
+  position: absolute;
+  top: 40px;
+  color: black;
+  transition: all 1s ease-in-out;
+}
