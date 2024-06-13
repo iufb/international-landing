@@ -7,7 +7,7 @@ export const HoverMenu = ({ items }) => {
           <span key={item.label} onClick={() => item.action()}>
             {item.label}
           </span>
-          {idx !== items.length - 1 && <hr />}
+          {idx !== items.length - 1 && <hr key={idx} />}
         </>
       ))}
     </div>

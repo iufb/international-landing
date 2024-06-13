@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Navbar } from "../widgets";
+import { Navbar } from "../../widgets/";
 
 export default function Index() {
   const t = useTranslations("Index");

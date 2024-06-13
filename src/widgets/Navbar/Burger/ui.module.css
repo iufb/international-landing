@@ -1,0 +1,23 @@
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #000;
+  z-index: 5;
+  animation: slide-in 0.5s forwards;
+}
+.slide-out {
+  display: none;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

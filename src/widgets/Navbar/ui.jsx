@@ -1,5 +1,7 @@
+import { LocaleChanger } from "@/features";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { Burger } from "./Burger/ui";
 import { Navlink } from "./Navlink/ui";
 import styles from "./ui.module.css";
 
@@ -17,6 +19,8 @@ export const Navbar = async () => {
           );
         })}
       </nav>
+      <LocaleChanger className={styles.locale} />
+      <Burger className={styles.burger} />
     </header>
   );
 };
