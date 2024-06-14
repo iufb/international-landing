@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  overflow-x: hidden;
+}
 :root {
   --color-primary: #000004;
   --color-base: #fff;
