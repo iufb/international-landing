@@ -15,11 +15,13 @@
 .nav {
   margin-top: 30px;
   justify-self: center;
+  max-width: 673px;
   width: 60%;
   height: 100%;
-  display: grid;
-  gap: 5px;
-  grid-template-columns: repeat(3, auto);
+  display: flex;
+
+  gap: 0 20px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .burger {
@@ -36,7 +38,7 @@
   }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 778px) {
   .wrapper {
     grid-template-columns: 80px 1fr 80px;
   }
