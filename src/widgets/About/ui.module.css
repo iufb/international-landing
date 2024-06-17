@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.wrapper img {
+  align-self: center;
+}
+.content {
+  margin-top: 10px;
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out;
+  list-style-type: disc;
+}
+.expanded {
+  max-height: 500px;
+}
+.collapsed {
+  max-height: 0;
+}
+
+.link {
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+.link img {
+  transition: transform 0.3s ease-in-out;
+}
+.arrow-expanded {
+  transform: rotate(-90deg);
+}
+.arrow-collapsed {
+  transform: rotate(0deg);
+}
