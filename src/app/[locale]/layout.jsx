@@ -1,3 +1,4 @@
+import { Layout } from "@/widgets";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Inter } from "next/font/google";
@@ -11,7 +12,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Layout>{children}</Layout>
         </NextIntlClientProvider>
       </body>
     </html>
