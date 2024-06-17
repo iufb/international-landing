@@ -33,6 +33,7 @@ export const LocaleChanger = ({ className }) => {
       {opened && (
         <div className={styles.menu}>
           <HoverMenu
+            component={"span"}
             items={[
               {
                 label: "en",

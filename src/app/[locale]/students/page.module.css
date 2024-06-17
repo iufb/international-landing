@@ -1,0 +1,12 @@
+.wrapper h1 {
+  margin: 20px 0;
+}
+.wrapper ul {
+  list-style: none;
+}
+.wrapper h3 {
+  margin: 10px 0;
+}
+.wrapper li {
+  margin: 5px 0 5px 15px;
+}

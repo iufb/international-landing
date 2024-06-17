@@ -4,7 +4,14 @@ export const HoverMenu = ({ items }) => {
     <div className={styles.wrapper}>
       {items.map((item, idx) => (
         <>
-          <span key={item.label} onClick={() => item.action()}>
+          <span
+            key={item.label}
+            onClick={() => {
+              if (item.action) {
+                item.action();
+              }
+            }}
+          >
             {item.label}
           </span>
           {idx !== items.length - 1 && <hr key={idx} />}

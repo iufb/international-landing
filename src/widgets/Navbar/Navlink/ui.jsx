@@ -1,7 +1,7 @@
 "use client";
 import { HoverMenu } from "@/shared/ui";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 import styles from "./ui.module.css";
@@ -9,6 +9,7 @@ import styles from "./ui.module.css";
 export const Navlink = ({ href, label, submenu }) => {
   const [hovered, setHovered] = useState(false);
   const t = useTranslations("nav");
+  const { locale } = useParams();
   const router = useRouter();
   return (
     <div
@@ -26,7 +27,8 @@ export const Navlink = ({ href, label, submenu }) => {
               return {
                 label: link.label,
                 action: () => {
-                  router.push(link.href);
+                  console.log("action");
+                  router.replace(`/${locale}/${link.href}`);
                 },
               };
             })}
