@@ -2,13 +2,18 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useParams, usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useTranslations } from "use-intl";
 import styles from "./ui.module.css";
 
 export const Burger = ({ className }) => {
   const [opened, setOpened] = useState(null);
+  const path = usePathname();
+  useEffect(() => {
+    setOpened(null);
+  }, [path]);
   return (
     <>
       <Image
@@ -50,17 +55,22 @@ const Menu = ({ closeIcon }) => {
   const t = useTranslations("nav");
   const [opened, setOpened] = useState(null);
   const [link, setLink] = useState(null);
+  const { locale } = useParams();
   return (
     <div className={styles.menu}>
       {closeIcon}
       {t.raw("links").map((link) => {
         if (link.submenu == "") {
-          return <Link href={link.href}>{link.label}</Link>;
+          return (
+            <Link key={link.label} href={`/${locale}/${link.href}`}>
+              {link.label}
+            </Link>
+          );
         } else {
           return (
             <label className={styles.linkWithMenu}>
+              key={link.label}
               <span
-                data-name={link.submenu[0].label}
                 onClick={() => {
                   setOpened(true);
                   setLink(link);
@@ -80,12 +90,17 @@ const Menu = ({ closeIcon }) => {
         }
       })}
       {link && (
-        <SecondLevel link={link} opened={opened} setOpened={setOpened} />
+        <SecondLevel
+          locale={locale}
+          link={link}
+          opened={opened}
+          setOpened={setOpened}
+        />
       )}
     </div>
   );
 };
-const SecondLevel = ({ link, opened, setOpened }) => {
+const SecondLevel = ({ link, opened, setOpened, locale }) => {
   return createPortal(
     <div
       style={{
@@ -109,7 +124,9 @@ const SecondLevel = ({ link, opened, setOpened }) => {
       </label>
       <div className={styles.menu}>
         {link.submenu.map((link) => (
-          <Link href={link.href}>{link.label}</Link>
+          <Link key={link.label} href={`/${locale}/${link.href}`}>
+            {link.label}
+          </Link>
         ))}
       </div>
     </div>,

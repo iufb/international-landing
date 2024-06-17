@@ -10,3 +10,9 @@
 .wrapper li {
   margin: 5px 0 5px 15px;
 }
+
+@media screen and (max-width: 1275px) {
+  .wrapper {
+    padding: 20px;
+  }
+}
