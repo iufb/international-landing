@@ -24,6 +24,7 @@
 }
 .linkWithMenu {
   display: flex;
+  align-items: center;
   width: 100%;
   justify-content: space-between;
 }
@@ -51,11 +52,13 @@
   height: 100%;
   justify-content: center;
 }
+
 .menu a,
 .menu span {
   text-decoration: none;
   color: var(--color-base);
   font-size: 24px;
+  width: 100%;
 }
 .close {
   position: fixed;

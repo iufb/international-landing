@@ -7,7 +7,13 @@ export const About = ({ title, imgSrc, content }) => {
   const [opened, setOpened] = useState(null);
   return (
     <div className={styles.wrapper}>
-      <Image src={imgSrc} alt={title} width={500} height={500} />
+      <Image
+        src={imgSrc}
+        alt={title}
+        width={500}
+        height={500}
+        className={styles.image}
+      />
       <div
         className={styles.link}
         onClick={() =>

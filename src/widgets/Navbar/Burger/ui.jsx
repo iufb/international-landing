@@ -14,6 +14,13 @@ export const Burger = ({ className }) => {
   useEffect(() => {
     setOpened(null);
   }, [path]);
+  useEffect(() => {
+    if (opened) {
+      window.document.body.style = "overflow:hidden";
+    } else {
+      window.document.body.style = "overflow:scroll";
+    }
+  }, [opened]);
   return (
     <>
       <Image
@@ -68,8 +75,7 @@ const Menu = ({ closeIcon }) => {
           );
         } else {
           return (
-            <label className={styles.linkWithMenu}>
-              key={link.label}
+            <label key={link.label} className={styles.linkWithMenu}>
               <span
                 onClick={() => {
                   setOpened(true);

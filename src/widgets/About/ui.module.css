@@ -34,3 +34,16 @@
 .arrow-collapsed {
   transform: rotate(0deg);
 }
+
+@media screen and (max-width: 1200px) {
+  .image {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 870px) {
+  .image {
+    width: 300px;
+    height: 300px;
+  }
+}

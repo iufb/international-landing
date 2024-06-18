@@ -3,3 +3,15 @@
   grid-template-columns: 1fr 1fr;
   gap: 0 20px;
 }
+
+@media screen and (max-width: 1200px) {
+  .about {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
