@@ -1,0 +1,29 @@
+.wrapper {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  height: 260px;
+  display: grid;
+}
+.wrapper img {
+  z-index: -1;
+}
+
+.shadow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 80%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+.text {
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  align-self: flex-end;
+  color: var(--color-base);
+}

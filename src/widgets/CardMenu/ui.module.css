@@ -1,0 +1,82 @@
+.menu {
+  position: absolute;
+  background-color: var(--color-primary);
+  color: var(--color-base);
+  padding: 20px 80px 20px 10px;
+  z-index: 3;
+  left: 20px;
+  right: 20px;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.menuContent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  overflow-y: auto;
+  gap: 0 20px;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imageWrapper img {
+  z-index: -1;
+}
+.menuText {
+  max-width: 90%;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.open {
+  max-height: 80%;
+  opacity: 1;
+}
+
+.close {
+  z-index: 400;
+  max-height: 0px;
+  opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .menu {
+    padding: 40px 30px 0 30px;
+  }
+  .menuContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+    max-height: 600px;
+    padding: 20px 0;
+    overflow-y: scroll;
+  }
+  .imageWrapper,
+  .menuText {
+    width: 100%;
+    flex: 1;
+  }
+  .imageWrapper {
+    min-height: 300px;
+  }
+
+  .open {
+    max-height: 100%;
+    opacity: 1;
+  }
+}
